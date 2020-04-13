@@ -1,0 +1,98 @@
+Workana 
+
+Angular, React, Node, Mongo, MySQL, Linux (), GIT, Docker
+
+
+Frontend -> Visual (UI)
+Backend -> Programación (funcional)
+
+1,2   HTML (MAQUETACIÓN + INFORMACIÓN)
+3,4,5 CSS (Hojas de estilo en cascado)
+6, 7  Bootstrap 4 -> estilos
+8,9,10,11,12 -> Javascript (Node, Angular, React, Vue)
+13,14 -> SQL (MySQL, SQL Server) : Bases de datos relacionales | MongoDB (no relacionales)
+15 - 21 / 22 --> Node 
+23 - 25 : Angular vs React 
+
+
+Frontend (información) ---> backend (NodeJS) --> Base de datos (MySQL)
+usuario registrado      <--   Información insertada  <--
+
+Gestor de gastos
+    --> Login
+    --> Registro (confirmación de correo)
+    --> Todos los gastos (filtro x fecha, filtro x tarjeta)
+    --> Cargar tarjetas disponibles
+
+Proyecto
+
+    e-commerce
+    foro
+    plataforma para cargar datos estadistica
+    portfolio
+    red social
+
+    Requisitos : 
+        Al menos 4 funcionalidades
+            --> envío de correo (nodemailer)
+            --> Registro
+            --> Login 
+            --> Busqueda de noticas
+            --> Buscador de usuarios
+            --> Generación de pdf 
+            --> Spootify (API)
+            --> Google Maps
+
+Lenguajes de programación 
+
+Javascript (frontend / backend) --> Angular --> Ionic (aplicaciones celular)
+Python (IA, Programas de escritorio)
+C (Arduino -> electrónica)
+C++
+JAVA
+
+
+El encargado de convertir a lenguaje de maquina el codigo escrito es el navegador (Chrome, Mozilla)
+Interprete
+
+
+
+
+URL : Uniform resource locator
+http://chaak.com.ar/index
+https://www.google.com.ar
+
+http : Hyper text transfer protocol 
+https : Protocolo que incorpora http y cifra las conexiones
+Protocolo : Conjunto de reglas para cumplir una acción determinada
+http : Conjunto de reglas que el navegador sigue para que el usuario final pueda ver la página web
+
+Cada protocolo tiene asociado un puerto.
+Un puerto es una puerta fisica / software que me permite intercambiar información con otra entidad.
+
+http -> puerto : 80
+https -> puerto : 443 | 565
+
+http://paginaweb.com.ar:80/index
+
+FTP Client : File transfer protocol -> puerto 21
+Telnet -> puerto 23
+
+IP : Internet protocol. Dirección (ej : 216.58.202.35) que ubica un recurso dentro de 
+una red (local, internet)
+
+facebook : 31.13.94.35
+google --> 216.58.202.35
+
+DNS : Sistema de nombre de dominio
+
+Para registrar dominios .com.ar --> nic.ar
+Para poder comprar un dominio en nic es necesario tener clave fiscal nivel 3
+
+Para registrar dominios .com 
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Desarrollo -> Local
+Una vez terminado el proyecto lo subimos
