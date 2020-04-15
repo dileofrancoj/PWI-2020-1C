@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <!-- Formularios -->
+    <!-- inputs -->
+    <!-- select nacionalidad, etc -->
+    <!-- textarea -->
+    <!-- <img src="" alt="" />  -->
+
+    <!-- Elementos para interactuar con el usuario final  -->
+    <h2>Registro de usuario</h2>
+    <!-- <br> break row -->
+    <!-- margin padding -->
+    <h3>Registrate para comenzar</h3>
+    <!-- Elemento de linea : span, label -->
+    <!-- <span>Un texto</span>
+    <span> al lado</span> -->
+    <form>
+
+        <!-- Todos los usuarios pueden modificar el front -->
+        <!-- Los usuarios no pueden modificar el servidor (validaciones) -->
+
+        <div>
+            <label for="nombre">Nombre</label>
+            <!-- text -> alfanumericos : 123asd@_.- -->
+            <!-- name es utilizado para identificar al elemento en el servidor -->
+            <!-- nombre -->
+            <input type="text" maxlength="10" placeholder="Franco" name="nombre" id="nombre" > 
+        </div>
+        <br>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" placeholder="Di Leo">
+                
+        </div>
+        <br>
+        <div>
+
+            <label for="correo">Correo</label>
+            <!-- text vs email : validar que exista un @ y un . -->
+            <input type="email" placeholder="foo@example.com" name="correo" id="correo">
+        </div>
+        <br>
+        <!-- etiqueta > etiqueta2 -->
+        <div>
+            <label for="password">Contraseña</label>
+            <input type="password" placeholder="***********" name="password" id="password">
+        </div>
+        <br>
+        <div>
+            <label for="fecha">Fecha de nacimiento</label>
+            <input type="date" name="fecha" id="fecha">
+        </div>
+        <br>
+        <div>
+            <label for="hora">Hora de nacimiento</label>
+            <input type="time" name="hora" id="hora">
+        </div>
+        <br>
+        <div>
+            <!-- comprobaciones que hace el navegador -->
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono" id="telefono">
+        </div>
+        <br>
+
+        <div>
+            <label for="archivos">Foto de perfil</label>
+            <!-- multiple es un atributo propio de este input que me permite seleccionar varios archivos a la vez -->
+            <!-- Servidor : MIME TYPE -->
+            <input type="file" name="archivos" id="archivos" multiple>
+        </div>
+
+
+        <!-- telefono -->
+        <!-- foto -->
+        <!-- motivo de ingreso -->
+        <!-- captcha (re captcha) -->
+        <!-- nacionalidad -->
+    </form>
+</body>
+</html>
