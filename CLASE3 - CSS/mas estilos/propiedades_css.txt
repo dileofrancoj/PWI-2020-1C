@@ -1,0 +1,37 @@
+color : color de texto
+background : color de fondo
+background-image : fondo de imagen
+text-align : center | left | right | justify
+
+
+Propiedades relacionadas a la fuente
+
+font : size | family | weight | style
+    font-size
+    font-family
+    font-weight
+    font-style
+
+text-decoration : none |underline | overline, line-through
+
+bordes : 
+
+    border-top-width :
+    border-right-color
+    border-bottom-style
+    border-left
+
+    border-width : 1px
+    border-color : tomato
+    border-style : solid | dotted | dashed
+
+formato resumido : 
+    border : 1px solid black
+
+Posicionamiento : 
+    border (modifica el tamaño de la caja)
+    padding (modifica el tamaño de la caja)
+        padding-top 
+        padding-left
+        padding-bottom 
+        padding-right

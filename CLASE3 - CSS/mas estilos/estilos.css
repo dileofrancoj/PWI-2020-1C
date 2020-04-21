@@ -1,0 +1,73 @@
+html {
+    background-image: url(https://google.com.ar/imagen.jpg);
+}
+
+h2 {
+    color : brown;
+    background : grey;
+    text-align : center;
+    height: 60px;
+}
+
+h3 {
+    color : yellow;
+    background : tomato;
+    text-align:center;
+    font-size : 22px;
+    /* valores disponibles para font-weight : 100/900 */
+    /* bold : valor de 700, normal  : 400 */
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+h4 , h5 {
+    text-decoration: underline;
+    /* background-color = background */
+    font-size : 24px;
+    background: tomato;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-align:right;
+    font-style: oblique;
+}
+
+h5 {
+    font-size:20px;
+}
+
+div p {
+   color : blue;
+   font-size:20px; 
+}
+div p strong {
+    color : red;
+}
+
+
+
+/* las clases se definen con punto adelante .ejemplo */
+.pregunta {
+    color : gold;
+    background : rgb(3, 3, 3);
+    font-size:18px;
+    /* del borde se puede modificar el color, el tipo de linea y el tamaño del borde */
+    text-align : center;
+    border-color :tomato;
+    border-style: solid;
+    border-width : 1px;
+    height: 70px;
+}
+.respuesta {
+    /* border : tamaño de borde, continuidad de linea, color */
+    /* border : 1px solid black */
+    border : 1px dotted turquoise;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background : orange;
+    font-size : 18px;
+    height: 80px;
+    border-radius:5px;
+    padding-top:10px;
+    text-align: center;
+}

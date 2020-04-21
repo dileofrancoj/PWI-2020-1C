@@ -1,0 +1,81 @@
+/* selector universal */
+/* * Expresion regular : All */
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* h1 {
+    color : tomato;
+    text-decoration: underline;
+} */
+
+/*
+ CTRL + }
+ Tipografias se pueden descargar de internet
+*/
+/* h2 {
+    color : turquoise;
+    text-decoration: underline;
+    font-weight: 900;
+    text-align: center;
+    background: black;
+} */
+
+p {
+    color : black; 
+    font-size: 22px;
+    /* bold : 600 */
+    font-weight: bold;
+    text-align: justify;
+}
+
+/* Clases */
+
+.titulo {
+    font-family: 'Times New Roman', Times, serif;
+    color : tomato;
+    text-decoration: underline;
+    text-align: right;
+    font-size:32px;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size:26px;
+}
+
+/* caja */
+.row1 {
+    /* width : [px] */
+    /* dispositivo resolucion : 1000px : 700px */
+    /* dispositivo resolucion : 500px : 350px;*/
+    width : 70%;
+    background : olive;
+    height: 400px;
+}
+.row2 {
+    width:30%;
+    background : gold;
+    height: 250px;
+}
+
+.posicionamiento {
+    background : red;
+}
+.parrafo {
+    /* width:80%; */
+    text-align: center;
+    /* padding-top : 40px;
+    padding-bottom : 60px;
+    padding-left : 10px;
+    padding-right: 20px;
+     */
+     /* top right bottom left */
+     /* padding: 10px; genera un espaciado de 10px en todas las direcciones */
+     /* derecha izquierda : 20px */
+     /* arriba y abajo : 30px */
+     /* padding : 30px 20px; */
+     padding : 10px 20px 30px 40px;
+}
+
+/*  */
