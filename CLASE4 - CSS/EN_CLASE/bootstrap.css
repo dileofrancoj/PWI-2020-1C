@@ -1,0 +1,18 @@
+.color1 {
+    background : hotpink;
+    height: 200px;
+    overflow: scroll;
+}
+
+.color2 {
+    background : papayawhip;
+}
+
+.color3 {
+    background : tomato;
+}
+
+.color4 {
+    background : darkgray;
+    height: auto;
+}
