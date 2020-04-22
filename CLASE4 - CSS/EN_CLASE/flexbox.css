@@ -1,0 +1,50 @@
+/* 
+    padding : padding-top | padding-right | padding-bottom | padding-left
+    margin : margin-top | margin-right | margin-bottom | margin-left
+*/
+/* Filas (contenedor) y columnas (contenido) */
+* {
+    margin : 0;
+    padding : 0;
+}
+.contenedor {
+    /* margin-top:20px; */
+    /* la propiedad height : alto y el valor auto hace que el contenido se adapte al contenedor */
+    height: 300px;
+    background : lightskyblue;
+    display : flex;
+    /* flex-direction: row; */
+    flex-wrap: nowrap;
+    /* 
+    justify-content -> se encarga del posicionamiento horizontal 
+    flex-start : default
+    flex-end : margen derecho
+    center : centrar
+    space-around : deja un espaciado entre el margen y otro entre las cajas
+    space-between : deja un especiado solo entre las cajas :D
+    */
+    justify-content: center;
+    /* align-items : posicionamiento vertical :D 
+        align-items : center | flex-start | flex-end
+    */
+    align-items : center;
+
+}
+
+.contenido {
+    /* padding :  */
+    /* margin-top : Separa el contenido del contenedor de forma externa ya que son cajas independientes */
+
+    height: 100px;
+    width : 25%;
+    border : 1px solid tomato;
+    padding: 0 10px;
+    text-align: center;
+    /* padding -> interno */
+    /* font-size:26px; */
+    /* 30px arriba | 30 px derecha | 30px abajo | 30 px izquierda */
+    /* top right bottom left */
+    /* background : red;
+    width : auto;
+    padding : 10px 40px; */
+}
