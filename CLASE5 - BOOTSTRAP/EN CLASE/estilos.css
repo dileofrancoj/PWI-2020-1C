@@ -1,0 +1,24 @@
+.main {
+    background : grey;
+}
+.color1 {
+    background : hotpink;
+}
+.color2 {
+    background : tomato;
+}
+
+.texto1 {
+    color : wheat;
+}
+
+.form {
+    background : slateblue;
+}
+.btn-success {
+    background : #70FF92;
+}
+.btn-success:hover {
+    background : #53BF6C; 
+}
+

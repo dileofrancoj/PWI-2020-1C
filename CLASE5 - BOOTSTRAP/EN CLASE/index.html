@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- estilos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- bootstrap -> flexbox -->
+    <!-- section -->
+    <div class="container main">
+
+         <!-- columnas calculadas -->
+         <div class="row">
+             <!-- col : xl | lg | md | sm | xs | col -->
+             <!-- xl < 1200 px -->
+             <!-- --breakpoint-sm: 576px;
+             --breakpoint-md: 768px;
+             --breakpoint-lg: 992px;
+             --breakpoint-xl: 1200px; -->
+
+             <!-- cajas se adaptan al contenido -->
+             <!-- height : 400px -->
+             <!-- overflow : scroll -->
+             <div class="col-xl-8 col-lg-7 col-sm-6 col-sx-12 color1">
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam vero 
+             </div>
+             <div class="col-xl-4 col-lg-5 col-sm-6 col-12 color2">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et nam alias reiciendis architecto dolorum ipsa placeat eum tempora consequatur vitae velit possimus repudiandae, voluptate magnam nihil tempore quia itaque laudantium.
+             </div>
+         </div>
+    </div>
+
+    <!-- section -->
+    <div class="container-fluid main">
+        <div class="row">
+            <!--  -->
+            <div class="col-8">
+                <!-- 0.25 REM | 0.5 rem | 1rem -->
+                <!-- pb pl pr pt mt ml mr mb -->
+                
+                <!-- cajas : justify-content : horizontal | align-items : vertical  -->
+                <!-- texto : text-align -->
+                <h3 class="texto1 mt-3 text-right">Titulo del contenido</h3>
+                <hr>
+                <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ab minima sunt corporis. Dicta facilis natus dolores ipsum, non eaque, omnis rerum cum vel dolor ut vero, totam nemo voluptate.Itaque, in labore? Qui, ratione illum iste deserunt maiores unde quam alias eum totam distinctio consequuntur quae veniam hic ipsam rerum! Adipisci sunt doloribus, labore in exercitationem maxime repellendus facere.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur cum saepe ipsam quia explicabo, autem quaerat similique, sed molestias enim vitae iste architecto ratione est molestiae! Eos architecto aperiam veniam.
+                Omnis hic dignissimos accusantium, rem quod tempora aspernatur impedit! Est aut excepturi molestias neque mollitia dignissimos, porro nisi quasi error. Eum facere fugit numquam esse voluptatum deleniti sit doloribus expedita.
+                Iusto aspernatur adipisci nulla quas fugit. Accusamus vitae exercitationem officia placeat incidunt in quam quo, dolore dicta corrupti porro, unde et dolores consequatur? Tempore inventore suscipit vero a, culpa ut?
+                </p>
+            </div>
+            <div class="col-4">
+                <!-- text-center porque no tiene cajas adentro -->
+                <h4 class="texto1 mt-3 text-center">Aside</h4>
+                <!--  -->
+                <hr>
+                <div class="row p-2">
+                    <!-- columa1 -->
+                    <div class="col-6">
+                        <h5>Posteos destacados</h5>
+                        <!-- ul -> lista desornada (menus | posteos destacados) -->
+                        <!-- ol -> lista ordenada (lista de cocina) -->
+                            <!-- li -> listem item -->
+                        <!-- posteos destacadas (ordenado por visitas)-->
+                        <ol>
+                            <li>Posteo 1</li>
+                            <li>Posteo 2</li>
+                            <li>Posteo 3</li>
+                            <li>Posteo 4</li>
+                            <li>Posteo 5</li>
+                        </ol>
+                    </div>
+                    <div class="col-6">
+                        <h5>Contenido similar</h5>
+                        <ul>
+                            <li>Contenido 1</li>
+                            <li>Contenido 2</li>
+                            <li>Contenido 3</li>
+                            <li>Contenido 4</li>
+                            <li>Contenido 5</li>
+                        </ul>
+                    </div>
+                    <!-- columna2 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section -->
+    <div class="container form">
+        <!-- h4 elemento de bloque : ocupa el 100% de la estructura padre -->
+        <h4 class="text-center">Formulario de contacto <small><a href="https://www.google.com.ar">Ver más</a></small></h4>
+        <!-- row -> contenedor : display : flex -->
+        <!-- .row {
+                display : flex;
+                justify-content-center
+        } -->
+        <div class="row justify-content-center">
+            <div class="col-6 mt-3">
+                <form method="post" action="">
+                    <!-- Grupos -> controles -> validadores -->
+                    <!-- margenes superiores e inferiores -->
+                    <div class="form-group ">
+
+                        <input type="text" required placeholder="Nombre completo" name="nombre" id="nombre" class="form-control">
+
+                    </div>
+                    <div class="form-group">
+    
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">@</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="correo@ejemplo.com " aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <!-- rows | cols : 100% -->
+                        <!-- hover : link : visited -->
+                        <textarea required placeholder="Comentario" name="comentario" id="comentario" rows="10" class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-block">Enviar</button>
+                    <!-- <hr>
+                    <button type="button" class="btn btn-warning">Advertencia</button>
+                    <button type="button" class="btn btn-success">OK</button>
+                    <button type="button" class="btn btn-info">Info</button> -->
+                    
+                    
+                </form>
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
