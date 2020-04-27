@@ -18,7 +18,12 @@
 .btn-success {
     background : #70FF92;
 }
+/* pseudoclase : Agregar un evento a una clase */
 .btn-success:hover {
     background : #53BF6C; 
+}
+
+.icon-size {
+    font-size : 30px;
 }
 
