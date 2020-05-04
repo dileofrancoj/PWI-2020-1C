@@ -1,0 +1,87 @@
+Google Ads
+Javascript : Lenguaje de programación.
+HTML4 (required, maxlength, email)
+Javascript -> Forma de potenciar las caracteristicas de html (efectos,validaciones)
+HTML5 CSS3 (transformaciones, sombras)
+
+	Javascript -> Animaciones | Frontend (Angular, React, Vue)
++	
+	Javascript -> Backend
+------------------------------------------------------------
+	FullStack (front + back)
+
+Lenguajes : Javascript (front (angular, react,vue) + back)+ MySQL ()
+Lenguaje back : .NET (Microsoft ) .ASP + Python (DJango) + Node + PHP (Wordpress)
+
+¿POO? Paradigma de programación
+
+python | java | php (Laravel, CodeIgniter)
+
+
+--------------------------------------------------------------------------------
+Constantes -> Fijo (que no cambia con el tiempo / persona)
+Variables  -> Usuario (input) (valor que varia con el tiempo / persona)
+
+
+	Tipos de datos	
+		"franco" -> Alfanumericos (string | varchar | char ) -> correo@ejemplo.com
+		26	     -> Numerico Entero (int | entero)
+		1.80     -> Numerico Flotante ()
+		3.1416   -> Flotante ()
+		true | false -> Booleans (Verdadero 1 | Falso 0 ) Switch
+		Date() -> Retorna un objeto tipo fecha hora
+
+
+Navegador -> Interpreta el codigo (Javascript)
+------------------------------------------------------------------------------------
+
+Memoria ram (temporal)
+----
+
+----
+
+----
+
+----
+
+----
+
+--------------------------------------------------------------------------------
+
+Operadores aritmeticos (+ , - , * , / , ** )
+	resultado = 2 + 5 // 7
+	resultado = "2" + "5" // "25" (concatenacion)
+	resultado = "papas" + 7 // Error
+	nombre = "franco"
+	edad = 26
+	mensaje = "Tu nombre es " + nombre + " y tu edad es :" + edad
+	// tu nombre es franco
+
+Operadores relacionales | comparacion (<, >, <=, >=, ==, != (<>))
+
+	2 > 4 -> False
+	4 > 2 -> True
+	5 == 5 -> True 
+	6 == 8 -> False
+	4 != 6 -> True
+	6 == "6" -> True (Evalua solamente el contenido)
+	6 === "6" -> False (contenido y tipo de dato)
+	"franco" === "franco" -> True 
+
+Operadores logicos (&& || !)
+(4 > 2) && (5 > 3) -> 
+   V    &&   V 	   -> True
+
+(8 > 3) && (6 != 6)
+   V    &&    F 	--> FALSE
+
+
+facebook
+	user = ("franco")
+	pass = ("contraseña")
+
+chequea si user Y pass coinciden con los elementos almacenados en la base de datos
+	"franco"
+	"contraseñ"
+	------------
+	False (no se cumplieron en simultaneo)
