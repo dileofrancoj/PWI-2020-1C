@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- link -->
+</head>
+<body>
+    <div class="container">
+        <h1>Javascript Parte I</h1>
+        <p>Javascript es un lenguaje orientado a prototipos y a eventos (click, paso el mouse sobre un elemento (mouseMove), keypress, focus, blur, etc) por defecto javascript es un lenguaje funcional (puede emular la poo)</p>
+
+        <p>Es recomendable incluir todos los codigos javascript al final de la página (antes de cerrar la etiqueta <b>body</b></p>
+        <p>DOM : Document Object Model es un elemento jerarquico del documento HTML. Antes de cargar un script es necesario asegurarse que todos los elementos de la página esten cargados</p>
+        <p>Las variables no pueden comenzra con numeros, con - , @ , !</p>
+        <p>Las variables no pueden contener espacios</p>
+        <p>Las variables no pueden estar separados por -, @ , ",", ñ</p>
+        <p>Las variables se definen con la palabra reservada let o var</p>
+        <p>Las constantes se definen con la palabra reservada CONST</p>
+        <p>Estructuras : condicionales, ciclo, funciones</p>
+
+        <!-- <input class="form-control" value="18"> -->
+        <script>
+            const nombreCurso = 'Programador web inicial';
+            // variable
+            // let nombrePropio="franco";
+            // let edad = 26;
+            // let altura = 1.8;
+            // let seriedad = false;
+
+            // imprimir informacion dentro del navegador
+            // document.write -> funcion imprimir en el navegador un mensaje
+            // document.write("Bienvenido al mundo de la programacion " + nombrePropio);
+            // mostrar una ventana emergente con un mensaje ()
+            // alert("La edad de " + nombrePropio + " es " + edad); // funcion propia de javascript
+            // ECMA 2016 -> Template String
+            // document.write(`Me llamo : ${nombrePropio}, tengo ${edad} años, mido : ${altura} metros y muchos me preguntan si soy serio pero la respuesta es : ${seriedad}`);
+            
+            // funcion -> ("argumento","valor inicial")
+            // let nombre = prompt('Ingresa tu nombre'); // franco
+            let edad = prompt("Ingresa tu edad"); // la funcion prompt retorna un string
+            // document.write(`El usuario se llama : ${nombre}`);
+            // typeof es una funcion propia de javascript -> cuando yo le paso una variable me retorna el tipo de dato de la variable
+
+            // edad = "20"
+            edad = parseInt(edad); // convertir a entero la variable "edad"
+            // edad = 20
+            // castear la variable -> convertir el tipo de dato de la variable al tipo de dato necesario
+            document.write(`El tipo de dato de edad es : ${typeof(edad)}`);
+            if(edad >= 18) {
+                document.write("Podes acceder a este sitio");
+            }
+
+            let usuario = prompt("Ingresa tu usuario"); // ingresa el usuario por prompt
+            let password = prompt("Ingresa tu contraseña"); // el valor que ingresa el usuario se asigna a la variable password
+            
+            // el usuario && la contraseña tienen que coincidir
+            if(usuario == 'administrador' && password == '1234') {
+                alert("Bienvenido administrador");
+            } else {
+                // entra aca cuando el usuario sea distinto de administrador, cuando la password sea distinta de 1234 o cuando ambos sean distintos
+                alert("Usuario o contraseña incorrecto")
+            }
+
+        </script>
+    </div>
+</body>
+</html>
