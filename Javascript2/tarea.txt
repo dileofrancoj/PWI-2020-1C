@@ -1,0 +1,9 @@
+1.
+ a. Definir dos constantes (variables) llamadas usuario y password y asignar el valor administrador y 1234 respectivamente
+ b. Preguntar al usuario que ingresa al sitio a través de dos prompts el usuario y la contraseña del sistema
+ c. Si el usuario y la contraseña coinciden con las del sistema (variable usuario y password) mostrar en el navegador un mensaje de bienvenida
+ d. Si no coinciden mostrar usuario o contraseña incorrectos
+
+2. Permitir al usuario ingresar 3 numeros dentro de la plataforma. Mostrar (por consola) una vez terminado el proceso cual es el mayor y cual el menor.
+
+3. Permitirle al docente Franco cargar 5 notas de alumnos. Determinar el promedio de la clase. Mostrar el resultado dentro de un cuadro de dialogo.
