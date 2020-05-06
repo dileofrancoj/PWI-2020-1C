@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Arrays | Vectores | Arreglos -->
+    <!-- let | var -->
+    <script>
+        let message; // inicialmente el mensaje no está cargado
+        let edad = parseInt(prompt("Ingresa tu edad"));
+        if(edad >= 20) {
+            // inicio bloque
+            // las variables definidas con let existen en el scope del bloque que se definieron
+            message = `Felicitaciones! Tenes ${edad} años`;
+            // fin del bloque
+        } else {
+            message = `Ufa... Tenes menos de 20 :( D:`
+        }
+        document.write(message);
+    </script>
+</body>
+</html>

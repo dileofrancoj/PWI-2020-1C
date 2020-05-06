@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Arrays | Vectores | Arreglos -->
+    <h3>Array | Vectores | Arreglos</h3>
+    <p>Los vectores son estructuras especiales que me permite transportar multiples datos dentro de un mismo elemento</p>
+    <p>Los vectores no tienen un tipo de dato definido (strings, booleans,enteros o mezclado)</p>
+    <p>Los vectores tienen componentes (elementos) delimitados por "," y estos elementos tienen indices</p>
+    <p>meses[0] hace referencia al primer elemento del vector meses</p>
+    <p>Los vectores arrancan en "0"</p>
+    <p>Length es una propiedad que tienen los vectores que devuelve el numero de elementos que tiene el array</p>
+    <script>
+        // Estructura de datos
+        // Vector (1,3) (1,4,7)
+        // el vector puede tener cualquier tipo de dato asociado :D
+        const mandaFruta = ["franco",26,1.8, false,"papafrita"];
+        let meses = ["enero","febrero","marzo","abril"];
+        let diasMeses = [31,28,31,30];
+
+        // push es un metodo de la clase Array que agrega un elemento a la ultima posicion del vector
+        meses.push("mayo");
+        // meses = ["enero","febrero","marzo","abril","mayo"];
+        diasMeses.push(31); 
+
+        // let totalIndices = (meses.length) - 1 // numero máximo de indices del vector meses
+        document.write(`<h2>La cantidad de elementos cargados dentro de los vectores es : ${meses.length}<h2>`)
+        document.write(`<h3>El indice máximo al que puedo acceder del vector es : vector.length - 1 :  ${meses.length - 1} </h3>`)
+        document.write(`Meses : ${meses}`);
+        // MVC
+        document.write(`<h4 style='color:tomato'>Días de los meses : ${diasMeses}</h4>`);
+        document.write(`El mes de ${meses[0]} tiene ${diasMeses[0]} días<br>`);
+        document.write(`El mes de ${meses[1]} tiene ${diasMeses[1]} días`); // El mes de febrero tiene 28 días
+        // undefined
+        document.write(`El mes de ${meses[4]} tiene ${diasMeses[4]} días`);
+
+        
+
+    </script>
+</body>
+</html>

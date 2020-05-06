@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  -->
+</head>
+<body>
+    
+    <script>
+
+        // EJ 1.
+        let edad = parseInt(prompt("Ingresa tu edad"));
+
+        if(edad >= 30) {
+            document.write(`Tenes 30 o más años : ${edad}`);
+        } else if(edad >= 20 && edad < 30) {
+            document.write(`Entre 20 y 29 años`);
+        } else if(edad < 20 && edad >= 10) {
+            document.write("Entre 10 y 19");
+        } else {
+            alert("No tenes edad suficiente para estar en el sitio");
+        }
+
+        // Detectar el mayor de  3 numeros pedidos al usuario
+        // Ej 2
+        let num1 = parseInt(prompt("Ingresa el primer numero"));
+        let num2 = parseInt(prompt("Ingres el segundo numero"));
+        let num3 = parseInt(prompt("Ingresa el tercer numero"));
+
+        if(num1 > num2 && num1 > num3) {
+            document.write(`El mayor es : ${num1}`);
+        } else if(num2 > num3) {
+            document.write(`El mayor es ${num2}`)
+        } else {
+            // Aunque los numeros sean iguales me muestra el "mayor" (cualquiera de los 3) se debe a que tenemos un else
+            document.write(`El mayor es ${num3}`)
+        }
+    </script>
+
+</body>
+</html>

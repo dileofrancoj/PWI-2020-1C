@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de estructuras repetitivas (for | while | do while | for each) : iterar sobre elementos</h1>
+    <h2>La estructura for : </h2>
+    <p>for(condicion){ bloque a ejecutar }</p>
+    <p>Variable de iteración o de recorrido (controla el ciclo)</p>
+    <p>for(start; stop ; step)</p>
+    <p>Acumulador | Contador </p>
+    <script>
+        const meses = ["enero","febrero","marzo","abril","mayo","junio","Julio","agosto"];
+        let sueldosEmpleado = [600,500,600,800,144,800,900,1900]
+        document.write("El empleado ganó : " + sueldosEmpleado.length + " sueldos <br>")
+        document.write(`El ultimo indicie del vector sueldosEmpleado es : ${sueldosEmpleado.length - 1} <br>`);
+        document.write(`El ultimo sueldo que ganaste fue de : ${sueldosEmpleado[sueldosEmpleado.length - 1]} <br>`); // 800
+        // 0 -> 7 -> 1
+        for(let i = 0; i <= sueldosEmpleado.length-1 ;i++) {
+            // document.write(`i vale : ${i}<br>`);
+            // Variable de recorrido
+            document.write(`El mes ${meses[i]} el empleado gano : $ ${sueldosEmpleado[i]}  <br>`)
+        }
+        // document.write(i);
+        // for(let i = 10; i < 200; i=i+10) {
+        //     document.write("segundo for : " + i);
+        // }
+
+    </script>
+</body>
+</html>
