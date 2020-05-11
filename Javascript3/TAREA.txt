@@ -1,0 +1,25 @@
+TAREA
+    1. Armar una página que permita al usuario tirar los dados (5)
+        Valores de los dados tienen que ser numeros aleatorios entre 1 y 6
+        
+        Si la suma de los dados es mayor a 20 -> Muy buen tiro
+        Si la suma es menor a 10 -> Segui participando
+        Si la suma es 30 -> Anda al casino porque hoy es tu dia
+
+    2. Hacer una presentación -> FORMATO JSON
+        let jon = {
+            nombre : 'jon',
+            edad : 18,
+            estudios : [
+                {nivel : 'secundario', promedio_final : 7.42, titulo : 'Informatica', graduado : true},
+                {nivel : 'universitario', promedio_final : null, titulo : 'Lic informatica', graduado : false}
+            ],
+        }
+    
+
+       for()  
+    3. Obtener todos los numeros impares del 1 al 50
+    4. Permitir al usuario cargar un numero ej : 8 (primeros 20 multiplos)
+        8 , 16 , 24, 32 ............. 
+    5. Sucesion fibonacci (opcional)
+        1 , 1 , 2 , 3 , 5 ,8 ,13 , 21
