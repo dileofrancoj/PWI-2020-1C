@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const NOTA_APROBADO = 6;
+        // Permitir al usuario ingresar 5 notas
+        // Calcular el promedio --> OK
+        // Saber cual fue la nota máxima
+        // Saber cual fue la nota minima
+        // Cuantas notas cargue.
+        let sumaNotas = 0;
+        let notas = [];
+        let reprobados = 0;
+        // suma de todas las notas / cantidad de notas cargadas
+        for(let i = 0; i <= 4; i++) {            
+            let nota= parseInt(prompt("Ingrese una nota"))
+            if(nota < NOTA_APROBADO) {
+                // reprobados = reprobados + 1
+                reprobados++;
+            }
+            sumaNotas = sumaNotas + nota
+            // sumaNotas /= nota;
+            notas.push(nota);
+        }
+        let promedio = sumaNotas / notas.length;
+        document.write(`El promedio de la clase es : ${Math.round(promedio)}<br>`)
+        document.write(`Los alumnos que rindieron son : ${notas.length}<br>`)
+        // Math.max(...array)
+        // Math.min(...array)
+
+        document.write(`La nota mas alta del curso es : ${Math.max(...notas)}<br>`);
+        document.write(`La nota mas baja del curso es : ${Math.min(...notas)}<br>`);
+        document.write(`La cantidad de reprobados del curso : ${reprobados}`);
+    </script>
+
+</body>
+</html>
