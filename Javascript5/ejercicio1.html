@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- DOM -->
+    <!-- Document Object Model -->
+    <!-- React JSX, Angular , Vue  : Componentes -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <input type="text" class="form-control" value="0" placeholder="18" id="numero1">
+            </div>
+            <div class="col-4">
+                <input type="text" class="form-control" value="0"  placeholder="28" id="numero2">
+            </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                <!-- listeners  -->
+                <!-- La funcion operacion tendrá un parametro  -->
+                <button class="btn btn-primary" onclick="operacion('+')">+</button>
+                <button class="btn btn-primary ml-2" onclick="operacion('-')">-</button>
+                <button class="btn btn-primary ml-2" onclick="operacion('*')">*</button>
+                <button class="btn btn-primary ml-2" onclick="operacion('/')">/</button>
+                <!-- <button class="btn btn-primary ml-2" onclick="operacion()">/</button> -->
+
+            </div>
+        </div>
+
+   
+        <div class="row mt-3">
+            <div class="col-12 d-flex justify-content-center">
+                <span style="font-size:1.3em;">Resultado : </span>
+                <span class="text-dark text-center" style="font-size:1.3em;" id="resultado"> 0</span>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <h2 class="display-5 text-center">Historial</h2>
+                <div class="jumbotron jumbotron-fluid" style="padding : 0 !important">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1 text-danger" style="cursor: pointer;" onclick="limpiarHistorial()"><b>X</b></div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <br>
+                            <p class="lead" id="historial"></p>
+
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // type = undefined
+        var operaciones = []; // acá voy a guardar el historial de todas las operaciones
+        function operacion(type = "default") {
+            let resultado = 0;
+            // .value es una propiedad / atributo HTML5 de la referencia del objeto que devuelve getElementById
+            let numero1 = parseFloat(document.getElementById('numero1').value || 0 );
+            let numero2 = parseFloat(document.getElementById('numero2').value || 0);
+            if(type == '-') {
+                resultado = numero1 - numero2;
+            } else if(type == '+') {
+                resultado = numero1 + numero2;
+            } else if(type == '*') {
+                resultado = numero1 * numero2;
+            } else if(type == '/') {
+                // Operadores ternarios :D
+                // condicion ? parte verdadera: parte falsa
+                numero2 == 0 ? resultado = "Math error" : resultado = numero1/numero2;
+            } else {
+                resultado = "Operación no permitida";
+            }
+            let op = `<br>${operaciones.length+1})  ${numero1} ${type} ${numero2} = ${resultado}`; // 5 - 3 = 2
+            // push es una funcion de la clase Array que agrega en la ultima posicion del vector lo que se le pase por parametro
+            operaciones.push(op);
+            document.getElementById('resultado').innerHTML = resultado;
+            document.getElementById('historial').innerHTML = operaciones;
+
+        }
+        function limpiarHistorial() {
+            document.getElementById('historial').innerHTML = "";
+            operaciones = [];
+        }
+    </script>
+</body>
+</html>
