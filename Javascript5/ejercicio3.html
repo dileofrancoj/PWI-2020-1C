@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-6">
+                <h3 class="text-center text-primary">Registrate :D</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input type="text"  name="usuario" autofocus id="usuario" onblur="comprobarUsuario()" class="form-control">
+                        <span id="mensajeErrorUsuario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+
+                        <input type="email" name="correo" id="correo" onblur="comprobarCorreo()" class="form-control">
+                        <span id="mensajeErrorCorreo" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+
+                        <input type="password" name="password" id="password" class="form-control">
+                        <i class="fas fa-eye" style="cursor: pointer;" onclick="ShowHidePassword()"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">DNI</label>
+
+                        <input type="text" name="dni" id="dni" class="form-control">
+                    </div>
+                    <button type="button" onclick="enviarInformacion()" class="btn btn-success btn-block">Registrate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- <script>
+ -->
+<!-- </script> -->
+<script src="https://kit.fontawesome.com/07397e1e91.js" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
