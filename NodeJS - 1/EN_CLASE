@@ -1,0 +1,117 @@
+Node
+Es un entorno de ejecucion de codigo javascript
+
+Back : Java, .NET , PHP , Node (JS), Go, Dino (JS)
+Modelo de datos : MySQL, PLSQL, MSSQL, POSTGRESQL, MONGO, CASSANDRA
+Front : Angular, React, Vue
+
+Node
+	back
+	front (sistema de vistas -> handlebars, pug, jade)
+PHP vs Node
+
+PHP -> Laravel, CodeIgniter
+Express -> Framework de Node que nos permite el desarrollo de sitios web
+		-> Manejo de peticiones http
+		-> Manejo de datos (formulario)
+		-> Manejo de urls
+		-> Manejo de sesiones
+
+		DRY : Dont repeat yourself
+		KISS : Keep it simple (stupid)
+
+		Modulos
+			-> Archivo o conjunto de archivos que cumplen un funcion especifica
+				mysql
+				md5 / sha1
+				dotenv
+				nodemailer
+				express-session
+
+		Gestor de paquetes (npm) -> node package manager
+			Crear proyectos
+			Instalar modulos
+			Corregir errores
+			Actualizar versiones
+
+		Dentro de la terminal de Node JS Command prompt (en la ubicacion que quieran)
+
+		Instalar programas (consola) -> 1 sola vez
+
+			1. npm i express -g (modulos globales que facilitan el desarrollo de sitios web)
+
+			2. npm i express-generator -g (genera estructura minima de un proyecto web)
+
+			3. npm i nodemon -g (up un webserver)
+
+		Crear proyecto -> cada vez que tengamos un proyecto
+
+			1. express practica001 --hbs -> crea una carpeta llamada nombreProyecto con el motor de vista handlebars
+
+			2. cd practica001
+			3. npm i (al no especificar un modulo a instalar, instala todas las dependecias que tienen en el archivo package.json) -> generando la carpeta node_modules
+			4. npm start
+			5. localhost:3000
+
+		Estructura minima de un proyecto con express
+
+			public /
+				css/
+				javascript/
+				stylesheets/
+
+			routes/ -> archivos de funcionalidad de ruta
+				index.js
+				users.js
+			views/ -> HTML
+				error.hbs
+				index.hbs
+				layout.hbs
+
+			app.js
+			localhost:3000/login
+			localhost:3000/registro
+			localhost:3000/home
+			localhost:3000/contacto
+			localhost:3000/franquito
+
+	HOST -> DNS
+
+Desarrollo en local -> Deploy -> Subir al servidor (nube) el proyecto
+
+127.0.0.1 -> DNS -> localhost
+
+Express por default levanta un web server en el puerto 3000 de nuestra computadora (localhost, 127.0.0.1)
+0. Levanto node
+1. localhost:3000
+
+POST,GET, PUT,DELETE -> verbos http
+CRUD -> Create read update delete (operaciones que se hacen dentro de una base de datos)
+routes [.js] -> 
+
+	const express = require('express'); // objeto principal 
+	const router = express.Router(); // routing -> leer verbos http
+
+	router.get('/', (req,res)=> {
+		cargar vista
+	})
+
+app.js ---> index.js ---> index.hbs
+
+(rutas)	--> acciones de ruta --> elemento visual
+
+SPA -> Single Page application
+
+
+Creacion de ruta : 
+	3 archivos
+		Modificar app.js (dar de alta la ruta)
+			-> crear la variable de ruta y crear la ruta permitida
+		Crear usuarios.js ()
+			-> const express
+			-> const router
+			-> module.exports 
+				-> error : (Router.use() requires a middleware function but got a Object)
+		Crear login.hbs (contenido visual del usuario)
+
+.container>.row.justify-content-center>.col-6>(.form-group>input.form-control)*2

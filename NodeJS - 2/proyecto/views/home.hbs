@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {{!-- queiro generar una columna por cada producto  --}}
+        {{#each productos}}
+            <div class="col-4 mt-2">
+                <div class="card" style="width: 100%;">
+                <img src="/images/{{imagen}}" class="card-img-top" alt="Descripcion de la imagen">
+                <div class="card-body">
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+                    <p class="card-text">$ {{precio}}</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+                </div>
+            </div>
+        {{/each}}
+
+        
+    </div>
+</div>
