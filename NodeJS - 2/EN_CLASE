@@ -1,0 +1,80 @@
+1. npm i express -g
+2. npm i express-generator -g
+3. npm i nodemon -g
+
+-------------------------------------------------
+Cada vez que queremos crear un proyecto
+
+express [proyecto] --hbs
+
+
+* NodeJS
+* Rutas estaticas + Formularios + Rutas dinamicas
+* Async await (then, catch)
+* Introducción a MySQL (https://www.apachefriends.org/es/index.html)
+
+XAMPP (APACHE MYSQL PHP PERL)
+MAMP : MAC APACHE MYSQL PERL
+WAMP : W APACHE MYSQL PERL
+LAMP : L APACHE MYSQL PERL
+
+sudo systemctl mysql-server status
+
+serverless (aws) -> funciones lambda
+
+AWS | Heroku
+
+Patrones
+	Patrones creacionales
+	Patrones de comportamiento
+	Patrones de diseño (MVC)
+		-> Modelo
+		-> Vista
+		-> Controlador
+
+Creacion de ruta : 
+	1. Dar de alta la ruta en el app.js (2)
+	2. Crear el archivo dentro de la carpeta routes (3)
+	3. Crear la vista correspondiente (html)
+
+Dentro de los callback : 
+	req : request (informacion que el cliente envia al sv)
+	res : response (informacion que el sv envia al cliente)
+
+SPA : Single page application (solo se muestra el layout.hbs)
+
+{{#each vector}}
+	elemento a repetir
+{{/each}}
+
+/productos/1 (parametros -> params)
+/productos/2
+/productos/3
+
+
+res.end() -> finalizar el flujo de datos sin envio de informacion
+res.json() -> api rest
+res.send() -> 
+res.render() -> renderizar una vista
+
+----------------------------------------------------------------------------------------------------------------
+NodeJS tiene un comportamiento asincronico
+
+enviarUnCorreo() // conecta a gmail, envia un correo y espera una respuesta
+console.log("Bienvenido")
+
+// Bienvenido
+// Envia el correo
+----------------------------------------------------------------------------------------------------------------
+// let usuarios = traer 2000 usuarios de una tabla // 1. conectar a sql // select * -> resuelva primero
+// res.render('vista',{usuarios : usuarios}) -> usuarios : undefined -> resuelva despues
+
+
+TAREA : 
+	
+	Implementar un template (FREE+ HTML5 +Bootsrap 4 + Responsive) en node
+	3 rutas
+		/home
+		/productos/all  -> 
+		/productos/1	-> producto individual
+		/contacto

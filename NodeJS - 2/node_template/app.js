@@ -4,18 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const home = require('./routes/home');
-const productos = require('./routes/productos');
-const contacto = require('./routes/contacto');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-// Cuando el usuario ingresa a host/home se carga el archivo home dentro de la carpeta routes
-app.use('/home', home);
-app.use('/productos',productos);
-app.use('/contacto', contacto);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,13 +19,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  console.log("Error")
   next(createError(404));
-  
 });
 
 // error handler
