@@ -1,0 +1,55 @@
+Bases de datos relacionales (SQL)
+MySQL -> 
+PLSQL
+MSSQL
+
+
+Base de datos 
+	-> Tablas 
+	-> (Registros (filas)y campos (columnas))
+
+
+
+id : Primary key , AUTO_INCREMENT (automatico)
+
+1 franco di leo dileo.francoj@gmail.com 312312312 1234 fecha
+2 pepito pepe pepito@gmail.com 1923812 1234 fecha_Creacion
+
+
+Primary_key -> Solo podemos tener uno por tabla
+A_I -> CLAVE PRIMARIA + TIPO DE DATO ENTERO
+
+Remera 1   -> id: 1,  Precio : 600, id_categoria : 1, descuento : 0	--> Agregar al carrito
+Pantalon 2 -> id : 4, precio : 1800, id_categoria : 2, descuento : 10 --> Agregar al carrito
+
+select sum(precio*cantidad) from carrito where lote = ''
+carrito 
+	-> (id, lote ,id_usuario, id_producto, precio, cantidad)
+		 2 , '577a25f6-02be-491e-b799-b4124958a605', 1, 4, 1800, 1
+		 3 , '577a25f6-02be-491e-b799-b4124958a605', 1, 1, 600, 2
+
+carrito (tabla pivot (intermediaria) para la compra final)
+
+Cualquier conexion (host (opcional), usuario,password, puerto (opcional))
+La forma de conectarnos mediante terminal a sql 
+mysql -u root -p -P 3306
+Enter password : 
+
+1. show databases; -- Sirve para mostrar todas las bases de datos disponibles
+2. use pwi_1c_2020; -- Sirve para acceder a una base de datos especifica
+3. show tables; -- Comando que se ejecuta DENTRO de una base de datos y me permite ver todas las tablas de esa base de datos
+4. describe [tabla]; -- Estructura de la tabla
+
+HTTP -> Verbos (GET, POST, PUT, DELETE) -> SELECT, INSERT, UPDATE, DELETE
+5. insert into [nombre tabla] (columna1,columna2,columnaN) values ('valor1','valor2','valorn')
+6. SELECT 
+	select columnas from tabla;
+	select id,nombre,descripcion,ts_create from categoria_principal;
+	select * from tabla; -- Trae todos los campos de la tabla
+	select campos from tabla where condicion -> select * from categoria_principal where id = 1;
+
+	select * from usuario where correo = 'dileo.francoj@gmail.com' and password = '1234';
+
+
+Herramienta visual : 
+SQLWorkBench
