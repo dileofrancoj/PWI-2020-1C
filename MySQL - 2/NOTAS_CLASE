@@ -96,3 +96,11 @@ JOIN -> Intersectar tabla (on -> prevenir duplicados)
 	Formato resumido 
 
 		select p.nombre, p.precio, p.imagen, p.descuento, c.nombre, c.descripcion from producto as p join categoria_principal as c on p.id_categoria = c.id;
+
+Librerias / MOdulos utilizados para el curso
+npm i mysql
+npm i util
+npm i nodemailer
+npm i sha1
+npm i multer
+npm i express-session
