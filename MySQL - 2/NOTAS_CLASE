@@ -1,0 +1,98 @@
+1. Node + hbs
+2. MySQL
+3. github | gitlab | bitbucket
+Fecha de entrega : Última clase (2 / 3 semanas después de la útlima clase)
+
+----------------------------------------------------------------------------------------------------
+
+usuario
+	id nombre ......
+
+	1   franco
+posteo
+	id titulo subtitulo contenido					
+	3   info   noticia  esta noticia es de prueba 
+
+
+comentarios
+	id id_usuario id_posteo comentario
+
+Imagenes en base de datos
+
+	-> varchar (se ingresa el url) -> varchar
+	-> foto    (se guarda la foto) -> blob format
+
+	La desventaja cuando se guardan fotos en la base de datos es que se vuelve más lentas
+
+
+DB -> TABLAS -> CAMPOS Y REGISTROS
+
+Shell -> Forma de acceder por consola 
+		 mysql -u root -P 3306 -h localhost -p
+		 -u : usuario
+		 -h : host
+		 -p : password
+		 -P : puerto
+
+VERBOS HTTP (POST, GET, PUT, DELETE)
+CRUD : 		CREATE, READ, UPDATE, DELETE
+
+CONSULTAS SQL : 
+	insert into [tabla] (campo1, campo2,...) values ('valor1', 'valor2','valor3');
+	select (c1,c2,c3 / * ) from tabla where condicion
+
+	Todas las operaciones de select, update y delete es mejor hacerlas mediante una clave primaria.
+
+	!!! delete from [tabla]
+		--> Siempre se usa una clausula where para este comando
+		--> delete from categoria_principal where id = 3;
+
+	!!! update [tabla] set campo = valor
+		--> Siempres se usa una clausula where para update
+		--> update [tabla] set campo_a_actualizar = 'valor del campo' (ERROR -> NO USE WHERE)
+		--> update categoria_principal set nombre = 'camisas' where id = 4;
+
+		Cambiar multiples campos.
+		--> update categoria_principal set nombre = 'camisa', descripcion = 'Camisas super frondosas, suaves y entalladas super soft aptas para tinchos' where id = 4;
+
+
+	LIKE -> Búsqueda de patrones
+		 -> "A%" busca todas las categorias que comienzan por A
+		 -> '%A'
+		 -> '%remer%'
+
+		ej : select nombre,descripcion from categoria_principal where nombre like '%ejemplo%' or descripcion like '%suave%';
+
+	count
+		select count(*) from categoria_principal;
+
+			let obj = {count(*): 3}
+
+		select count(*) as total from categoria_principal;
+
+			let obj = {total : 3}
+
+----------------------------------------------------------------------------------------------------
+
+insert into producto (nombre,descripcion,precio,imagen,id_categoria,descuento) values ('Camisa hawaiana','hermosa camisa caribenia',1400,'images/hawaiana.jpg',4,20);
+
+
+	Camisas > Camisa Hawaiana 			nombre, precio, imagen
+
+	Camisas super frondosas, 
+	suaves y entalladas super 
+	soft aptas para tinchos
+
+JOIN -> Intersectar tabla (on -> prevenir duplicados)
+	
+	1. SELECT 
+	(producto.nombre,producto.precio,producto.imagen, producto.descuento, categoria_principal.nombre, categoria_principal.descripcion) from producto join categoria_principal
+	on producto.id_categoria = categoria_principal.id;
+
+	2. select nombre from producto join categoria_principal on producto.id_categoria = categoria_principal.id;
+		Columna nombre pertenece a las dos tablas -> ambiguo (SIEMPRE ACLARAR NOMBRE DE LA TABLA QUE SE VA A SACAR INFO)
+
+
+	Formato resumido 
+
+		select p.nombre, p.precio, p.imagen, p.descuento, c.nombre, c.descripcion from producto as p join categoria_principal as c on p.id_categoria = c.id;
