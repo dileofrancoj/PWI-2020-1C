@@ -1,0 +1,64 @@
+[online once]
+e-Shop
+-----------------------------------------------------------------
+Route 53
+	-> crear un subdominio
+
+Instancia
+	configurar apache crear un subdominio
+
+
+* Integracion Node + SQL
+	- MySQL ( SELECT, UPDATE, DELETE, INSERT )
+	- async/await
+
+	Proyecto
+		* npm i mysql
+		* npm i util  -> async/await (promesas) (ES6)
+		* npm i cors  -> permisos / acceso aplicacion
+
+		/index -> Home
+		/productos -> Vista con todos los productos
+						* 
+		/producto  -> Vista individual del producto (COMPRAR)
+		/contacto  -> Formulario de mail
+		/about	   -> Información de la empresa
+
+		------------------------------------------------------
+		/admin ABM (alta baja modificacion)
+
+		/producto/new -> crear producto nuevo
+		/producto/edit/1 -> editar producto
+		/producto/delete/1 -> eliminar producto
+
+		------------------------------------------------------
+		API REST
+		Application program interfaz
+
+		Interfaz : Capa de abstracción (UI)
+		API : Interfaz para que los programas se comuniquen
+		Servicio web : Arquitectura tal que las aplicaciones que estan conectadas compartan info
+
+		REST : Arquitectura (representational state transfer)}
+		------------------------------------------------------
+		https://www.npmjs.com/package/mysql
+
+		Integracion con MySQL :D
+			utils/
+				bd.js ()
+
+		MVC (Modelo Vista Controlador)
+		Modelo -> Consultas a la base de datos
+		Vista  -> .hbs (UI)
+		Controlador -> Rutas (routes)
+				   p 		 req			res
+		Usuario X --> app.js --> Controller --> Usuario X (vista)
+									 |r
+							       Modelo 
+
+
+		{{#each nombre}}
+
+			
+
+		{{/each}}
