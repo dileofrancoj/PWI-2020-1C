@@ -1,0 +1,29 @@
+<section class="ftco-section" id="testimonios">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-6 heading-section text-center ftco-animate">
+                <span class="subheading">Contacto</span>
+                <h2 class="mb-4">Envianos un mensaje</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-12">
+                <form method="post" action="/contacto">
+                    <div class="form-group">
+                        <label for="email">Correo *</label>
+                        <input type="email" id="email" placeholder="ejemplo@correo.com" name="email"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje"></label>
+                        <textarea name="mensaje" class="form-control" placeholder="mensaje"></textarea>
+                    </div>
+                    <h5 class="text-success text-center">{{message}}</h5>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
