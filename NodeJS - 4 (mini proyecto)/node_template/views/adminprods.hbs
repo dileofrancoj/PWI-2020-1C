@@ -3,11 +3,11 @@
         <div class="col-12">
             <h4>Productos cargados</h4>
             <div class="col-4 mt-3">
-                <a class="btn btn-primary" href="">Alta de producto</a>
+                <a class="btn btn-primary" href="/admin/productos/alta">Alta de producto</a>
                 {{!-- admin/productos/alta --}}
 
             </div>
-            <table class="table table-hover table-responsive mt-3">
+            <table class="table table-hover table-responsive mt-3 text-center">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -15,6 +15,9 @@
                         <th>Imagen</th>
                         <th>Precio</th>
                         <th>Categoria</th>
+                        <th></th>
+                        <th></th>
+
 
                     </tr>
                 </thead>
@@ -26,8 +29,13 @@
                         <td><img src="/{{imagen}}" style="width:100px; height:auto"></td>
                         <td>${{precio}}</td>
                         <td>{{nombre_categoria}}</td>
+                        <td><i class="fas fa-cogs text-primary pr-3 pl-3"></i></td>
+                        {{!-- /admin/productos/baja/4 --}}
+                        <td><a href="/admin/productos/baja/{{id}}"><i class="fas fa-trash text-danger pr-3 pl-3"
+                                    style="cursor: pointer;"></i></a>
+                        </td>
                     </tr>
-
+                    {{!--  XMLHTTPRequest  --}}
                     {{/each}}
                 </tbody>
             </table>
