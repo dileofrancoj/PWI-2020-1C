@@ -1,0 +1,36 @@
+<div class="container" style="margin-top:10vh;">
+    <div class="row">
+        <div class="col-12">
+            <h4>Productos cargados</h4>
+            <div class="col-4 mt-3">
+                <a class="btn btn-primary" href="">Alta de producto</a>
+                {{!-- admin/productos/alta --}}
+
+            </div>
+            <table class="table table-hover table-responsive mt-3">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Imagen</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productos}}
+                    <tr>
+                        <td>{{nombre}}</td>
+                        <td>{{descripcion}}</td>
+                        <td><img src="/{{imagen}}" style="width:100px; height:auto"></td>
+                        <td>${{precio}}</td>
+                        <td>{{nombre_categoria}}</td>
+                    </tr>
+
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

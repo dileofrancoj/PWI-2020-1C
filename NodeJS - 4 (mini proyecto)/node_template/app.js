@@ -9,6 +9,7 @@ dotenv.config();
 var indexRouter = require("./routes/index");
 const productosRouter = require("./routes/productos");
 const contactoRouter = require("./routes/contacto");
+const adminProductosRouter = require("./routes/admin/productos");
 var app = express();
 
 // view engine setup
@@ -24,7 +25,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/productos", productosRouter);
 app.use("/contacto", contactoRouter);
-// catch 404 and forward to error handler
+
+/* Admin */
+app.use("/admin/productos", adminProductosRouter);
+
 app.use(function (req, res, next) {
   next(createError(404));
 });

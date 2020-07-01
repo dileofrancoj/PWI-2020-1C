@@ -2,8 +2,13 @@ const pool = require("../utils/bd"); // importamos la referencia de la conexion
 getProducts = async () => {
   try {
     // consultas
-    const query = "SELECT id,nombre,descripcion,precio,imagen FROM ??";
-    const rows = await pool.query(query, [process.env.TABLA_PRODUCTO]);
+    const query =
+      "SELECT producto.id, producto.nombre, producto.descripcion,producto.precio,producto.imagen,categoria_principal.nombre as nombre_categoria  FROM ?? JOIN ?? ON producto.id_categoria = categoria_principal.id ";
+    const rows = await pool.query(query, [
+      process.env.TABLA_PRODUCTO,
+      process.env.TABLA_CATEGORIAS,
+    ]);
+    // SELECT p.id, p.nombre, p.descripcion, p.precio, p.imagen , c.nombre, c.descripcion from producto  as p join categoria_principal as c on p.id_categoria = c.id
     return rows;
   } catch (error) {
     console.log(error);
@@ -13,7 +18,7 @@ getProducts = async () => {
 getProduct = async (id) => {
   try {
     const query =
-      "SELECT id, nombre, descripcion ,precio , imagen FROM ?? where id = ?";
+      "SELECT id, nombre, descripcion ,precio , imagen FROM ?? WHERE id = ?";
     const params = [process.env.TABLA_PRODUCTO, id];
     const rows = await pool.query(query, params);
     return rows[0];
@@ -21,7 +26,17 @@ getProduct = async (id) => {
     console.log(error);
   }
 };
+
+const create = async (obj) => {
+  // SET -> Se usa cuando se envia un objeto como parametro (campos) values()
+  const query = "INSERT INTO ?? SET ?";
+  // obj debe tener como propiedades del objeto los campos de la tabla
+  const params = [process.env.TABLA_PRODUCTO, obj];
+  const rows = await pool.query(query, params);
+  return rows;
+};
 module.exports = {
   getProducts,
   getProduct,
+  create,
 };
