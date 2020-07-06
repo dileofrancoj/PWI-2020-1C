@@ -1,0 +1,65 @@
+VARIABLES SESSION --> SERVER
+
+Ventajas : Seguridad -> Se guarda la información en el servidor
+Desventajas : El servidor se hace más lento
+
+AWS | Heroku ->
+ Zonas disponibles | Balanceo de carga | Distribucion de contenido 
+ Autoscaling
+
+Mejorar el rendimiento de un SERVER
+    1. RAM (AWS)
+    2. Optimizar la programación
+    3. nginx | apache 
+
+
+SP
+    |     |      |
+
+    x    S2      S1 
+
+JSON WEB TOKEN
+    -> cabecera
+    -> información ( id, permisos )
+    -> firma
+
+
+API 
+    -> AUTH -> JWT /AUTH -> JWT
+npm i multer
+npm i node-uuid
+npm i jsonwebtoken
+
+
+SESIONES : 
+   S1       S2
+    |        | 
+   500u     300u
+
+       S2
+        |
+       300 U + 500 USUARIOS DESLOGUEADOS
+       800 USUARIOS
+ JWT
+    S1       S2
+    |        |
+    500u     300 u
+
+        S2
+        |
+        800 USUARIOS
+
+Cuando se sube una imagen : 
+    /tmp (bytes) origen
+    /public/images destino
+
+{
+  fieldname: 'foto',
+  originalname: 'git.exe',
+  encoding: '7bit',
+  mimetype: 'application/x-msdownload',
+  destination: './public/tmp',
+  filename: 'faf3bd622cb4aad06ff804c8ac3fd7dd',
+  path: 'public\\tmp\\faf3bd622cb4aad06ff804c8ac3fd7dd',
+  size: 5689 
+}
