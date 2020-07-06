@@ -5,6 +5,7 @@ const { getCategories } = require("./../../models/categoria");
 
 router.get("/baja/:id", async (req, res) => {
   try {
+    //   XMLHTTPRequest
     const { id } = req.params;
     const result = await update(id, { estado: 0 });
     res.redirect("/admin/productos");

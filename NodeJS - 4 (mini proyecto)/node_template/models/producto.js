@@ -18,8 +18,8 @@ getProducts = async () => {
 getProduct = async (id) => {
   try {
     const query =
-      "SELECT id, nombre, descripcion ,precio , imagen FROM ?? WHERE id = ?";
-    const params = [process.env.TABLA_PRODUCTO, id];
+      "SELECT id, nombre, descripcion ,precio , imagen FROM ??  WHERE id = ?";
+    const params = [process.env.TABLA_PRODUCTO, "puntuacion", id];
     const rows = await pool.query(query, params);
     return rows[0];
   } catch (error) {
