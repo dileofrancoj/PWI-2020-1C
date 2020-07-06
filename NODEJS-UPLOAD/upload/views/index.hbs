@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            {{!-- Contenido multimedia -> enctype ="multipart/form-data" --}}
+            <form method="post" action="/" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="descripcion" name="descripcion"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="file" class="form-control" name="foto">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
