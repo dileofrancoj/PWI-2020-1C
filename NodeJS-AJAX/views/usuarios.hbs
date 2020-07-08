@@ -7,6 +7,7 @@
                         <td>#</td>
                         <td>Nombre</td>
                         <td>Descripcion</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +21,17 @@
                         <td>
                             {{#if estado}}<span>Habilitado</span>{{else}}<span>Deshabilitado</span>{{/if}}
                         </td>
+                        <td>
+                            {{#if estado}}
+                            <i class="fas fa-times text-danger" style="cursor:pointer"
+                                onclick="habilitar(0,{{id}})"></i>
+                            {{else}}
+                            <i class="fas fa-check text-success" style="cursor:pointer"
+                                onclick="habilitar(1,{{id}})"></i>
+                            {{/if}}
+
+                        </td>
+
                     </tr>
                     {{/each}}
                 </tbody>
@@ -27,3 +39,36 @@
         </div>
     </div>
 </div>
+
+{{!-- POST /url + obj --}}
+{{!-- GET /url/id? --}}
+{{!-- DELETE /url/id --}}
+{{!-- UPDATE url/id + obj --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+    const habilitar = (estado, id) => {
+        console.log("estado", estado);
+        console.log("id ", id)
+        // const datos = new URLSearchParams(new FormData({ estado: estado }))
+        fetch(`/users/${id}`, {
+            method: 'PUT',
+            body: { estado: estado }
+
+        })
+            .then((response) => response.json()) //res.json() convierte el objeto del server a la respuesta
+            .then(data => message(data))
+    }
+    const message = (dato) => {
+        console.log(dato);
+        if (dato.status) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Estado actualizado',
+                showConfirmButton: true,
+            })
+        }
+    }
+
+</script>

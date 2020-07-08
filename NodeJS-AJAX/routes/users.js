@@ -8,4 +8,14 @@ router.get("/", async (req, res, next) => {
   res.render("usuarios", { usuarios: result });
 });
 
+// GET -> /url/params? (/usuarios | /usuarios/2)
+// POST -> /url + OBJ
+// DELETE /url/params -> (/usuarios/2)
+// PUT /url/params + OBJ -> /usuario/2 + {estado : 0}
+router.put("/:id", (req, res) => {
+  console.log(req.params.id);
+  console.log(req.body);
+  res.json({ status: true });
+});
+
 module.exports = router;

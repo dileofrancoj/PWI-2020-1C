@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const sha1 = require("sha1");
-
+// const {alta} = require('categoriasModel');
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
@@ -9,11 +9,14 @@ router.get("/", function (req, res, next) {
 
 // Dar de alta una categoria
 router.post("/", async (req, res) => {
-  console.log("Hi async");
-  console.log(req.body);
-  // dar de alta la categoria
-  // model -> objeto
-  // enviar un res.json a la vista
-  res.json({ success: false });
+  try {
+    console.log("Hi async");
+    console.log(req.body);
+    const obj = ({ nombre, descripcion } = req.body);
+    // const result = await alta(obj);
+    res.json({ success: true });
+  } catch (error) {
+    res.json({ success: false });
+  }
 });
 module.exports = router;
