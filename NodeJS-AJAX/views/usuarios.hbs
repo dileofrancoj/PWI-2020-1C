@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Nombre</td>
+                        <td>Descripcion</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each usuarios}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>
+
+                            {{usuario}}
+                        </td>
+                        <td>
+                            {{#if estado}}<span>Habilitado</span>{{else}}<span>Deshabilitado</span>{{/if}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

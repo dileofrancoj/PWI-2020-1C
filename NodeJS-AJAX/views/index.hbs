@@ -1,2 +1,63 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form id="form1">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre cat">
+                </div>
+                <div class="form-group">
+
+                    <textarea class="form-control" name="descripcion" id="descripcion"
+                        placeholder="Descripcion"></textarea>
+                </div>
+                {{!-- Method | Action --}}
+                <button type="button" id="boton" class="btn btn-primary">Crear</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+    // document
+    // window -> 
+    // listener (evento, callback/funcion)
+    window.addEventListener('load', () => {
+        console.log("Cargado..")
+        document.getElementById('boton').addEventListener('click', botonApretado);
+    });
+
+    const botonApretado = () => {
+        // console.log("%cUpss me apretaron 😜🐱‍🏍", "color:red");
+        const datos = new URLSearchParams(new FormData(document.getElementById('form1')));
+        // fetch
+        fetch('/', {
+            method: 'POST',
+            body: datos
+        })
+            .then(response => response.json())
+            .then(data => message(data));
+    }
+
+    const message = (datos) => {
+        if (datos.success) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Categoria cargada 🤞',
+                showConfirmButton: true,
+            })
+        } else {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Oops... Ocurrio un error 🤣',
+                showConfirmButton: true,
+            })
+        }
+    }
+
+</script>
