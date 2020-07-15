@@ -1,0 +1,82 @@
+npm i express-session
+
+app.js
+
+app.use(
+  session({
+    secret: "plp_secret_token",
+    rejectUnauthorized: false,
+    saveUninitialized: true,
+    resave: true,
+    cookie: { maxAge: null },
+  })
+);
+
+secured = (req, res, next) => {
+  try {
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect("/auth");
+    }
+  } catch (error) {
+    res.redirect("/auth");
+  }
+};
+
+app.use("/auth", auth);
+app.use("/", secured, indexRouter);
+
+
+auth.js -> autentica al usuario 
+
+router.post("/", async (req, res, next) => {
+  try {
+    let { usuario, password } = req.body;
+    // let usuario = req.body.usuario;
+    password = md5(req.body.password);
+    let data = await authModel.authUser(usuario, password);
+    if (data.length > 0) {
+      // 2 sesiones
+      req.session.id_usuario = data[0].id;
+      req.session.usuario = data[0].usuario;
+
+      res.redirect("/p/1");
+    } else {
+      res.render("login", { message: "Datos de acceso incorrectos" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+model/auth
+
+async function authUser(usuario,password) {
+    try {
+        let query = "select id, usuario from usuarios where usuario = ? and password = ?";
+        const rows = await pool.query(query,[usuario,password]);
+        return rows;
+    } catch(error) {
+        throw error;
+    }
+}
+
+
+login.hbs
+
+<div class="container-fluid" style="height: 100vh;">
+    <div class="row" style="width:35%; margin:0 auto; padding-top:35vh;">
+        <form method="post" action="/auth">
+            <div class="form-group">
+                <input class="form-control" name="usuario" placeholder="usuario">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="*******">
+
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            <h4 class="text-danger text-center">{{message}}</h4>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">Mascotas de Alumnos 🔥</h2>
+      <table
+        class="table table-hover text-center"
+        style="border: 1px solid black;"
+      >
+        <thead>
+          <tr>
+            <td>Nombre</td>
+            <td>Tipo</td>
+            <td>Edad</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let mascota of descripcionMascotas"
+            style="border: 1px solid orangered;"
+          >
+            <td>{{ mascota.nombre }}</td>
+            <td>{{ mascota.tipo }}</td>
+            <td>{{ mascota.edad }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

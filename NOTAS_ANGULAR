@@ -1,0 +1,179 @@
+npm i express-session
+
+app.js
+
+app.use(
+  session({
+    secret: "plp_secret_token",
+    rejectUnauthorized: false,
+    saveUninitialized: true,
+    resave: true,
+    cookie: { maxAge: null },
+  })
+);
+
+secured = (req, res, next) => {
+  try {
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect("/auth");
+    }
+  } catch (error) {
+    res.redirect("/auth");
+  }
+};
+
+app.use("/auth", auth);
+app.use("/", secured, indexRouter);
+
+
+auth.js -> autentica al usuario 
+
+router.post("/", async (req, res, next) => {
+  try {
+    let { usuario, password } = req.body;
+    // let usuario = req.body.usuario;
+    password = md5(req.body.password);
+    let data = await authModel.authUser(usuario, password);
+    if (data.length > 0) {
+      // 2 sesiones
+      req.session.id_usuario = data[0].id;
+      req.session.usuario = data[0].usuario;
+
+      res.redirect("/p/1");
+    } else {
+      res.render("login", { message: "Datos de acceso incorrectos" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+model/auth
+
+async function authUser(usuario,password) {
+    try {
+        let query = "select id, usuario from usuarios where usuario = ? and password = ?";
+        const rows = await pool.query(query,[usuario,password]);
+        return rows;
+    } catch(error) {
+        throw error;
+    }
+}
+
+
+login.hbs
+
+<div class="container-fluid" style="height: 100vh;">
+    <div class="row" style="width:35%; margin:0 auto; padding-top:35vh;">
+        <form method="post" action="/auth">
+            <div class="form-group">
+                <input class="form-control" name="usuario" placeholder="usuario">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="*******">
+
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            <h4 class="text-danger text-center">{{message}}</h4>
+        </form>
+    </div>
+</div>
+
+-----------------------------------------------------------------------------
+Angular Vs React
+Fram    vs Libreria
+
+Angular -> Framework
+Framework vs Libreria
+
+Framework : Conjunto de librerias
+
+Frontend : Angular / React / Vue
+Backend :  NodeJS
+
+MVC : Modelo  Vista    Controlador 
+	  MySQL  Angular   NodeJS (res.json())
+	  Mongo  React     
+	         HBS
+
+Facebook vs Google
+
+
+Comunicacion 
+                    GET
+Angular (visual)   ---->  NodeJS     ---> MySQL 
+    Objeto         <--    res.json() <--
+
+----------------------------------------------------------------------------
+Angular +2
+
+npm i @angular/cli -g (Instala un programa global en la PC para usar el CLI de angular)
+
+TypeScript (Javascript POO) extension : .TS
+
+npm i express - g | npm i @angular/cli -g
+express [proyecto] --hbs | ng new angular01
+
+ng new angular01 -> Crear una carpeta llamada angular01
+Would u like to add angular routing (Y/n) -> Y
+CSS --> ENTER
+
+Google : 
+	FireBase (Basea de datos no relacional) on cloud
+	Angular
+
+Angular + FireBase + Auth0
+
+ng serve -> Comando para levantar el proyecto de angular (web server) en el puerto 4200
+
+ng serve --port 4300
+
+----------------------------------------------------------------------------
+
+Aplicacion SPA (Single page application) -> Aplicacion de una sola página
+
+src/app/
+	componentes
+
+navbar
+header
+contenido dinamico /login /registro /productos /producto/1
+footer
+
+
+Aplicacion mínima en Angular
+	app
+		app.component.html -> Visual
+		app.component.css  -> Estilos privados en cada componente
+
+Interpolacion : Forma de pasar información del .ts a la vista
+
+
+.ts --> .js (lee el navegador) Compilar X
+Convertir un lenguaje de muy alto nivel (ts) a un lenguaje de alto nivel (transpilacion)
+
+
+Creación de componentes
+Header
+Mascotas 
+
+¿Como creamos un componente?
+
+
+ng generate component components/header
+ng g c components/header
+	header.component.html
+	header.spec.component.ts
+	header.component.css
+	header.component.ts
+ng g c components/mascotas
+
+
+
+						  app.component  -->  index.html (layout -> styles) SPA
+								|         ^
+Componente (mascotas) ->   router-outlet  | 
+
+
