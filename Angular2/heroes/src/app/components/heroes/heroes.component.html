@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-12 mt-4" *ngFor="let h of heroes">
+      <div class="card" style="width: 100%;">
+        <img src="{{ h.img }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ h.nombre }}</h5>
+          <p class="card-text">
+            {{ h.bio }}
+          </p>
+          <span class="card-text">
+            {{ h.aparicion | date: "medium" }}
+          </span>
+          <p class="card-text">{{ h.precio | currency: "USD" }}</p>
+          <a
+            routerLink="/heroe/{{ h.id }}"
+            class="btn btn-outline-primary btn-block"
+            >Ver más</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

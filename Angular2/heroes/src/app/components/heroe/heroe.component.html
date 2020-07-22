@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <img src="{{ heroe.img }}" width="500px" />
+    </div>
+    <div class="col-md-6 offset-1 col-12">
+      <div class="jumbotron p-3 mt-5">
+        <h1 class="display-4">{{ heroe.nombre }}</h1>
+        <p class="lead">
+          {{ heroe.bio }}
+        </p>
+        <hr class="my-4" />
+        <p>Fecha de aparición : {{ heroe.aparicion | date: "medium" }}</p>
+        <h4 class="badge badge-pill badge-dark p-3">
+          {{ heroe.precio | currency: "ARS" }}
+        </h4>
+        <a
+          *ngIf="heroe.color == 'primary'"
+          class="btn btn-primary btn-block text-white"
+          >Agregar</a
+        >
+        <a
+          *ngIf="heroe.color == 'dark'"
+          class="btn btn-dark btn-block text-white"
+          >Agregar</a
+        >
+        <a
+          *ngIf="heroe.color == 'red'"
+          class="btn btn-danger btn-block text-white"
+          >Agregar</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
